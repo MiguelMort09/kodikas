@@ -15,9 +15,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="es">
-    <head>
-        <link rel="icon" href="%PUBLIC_URL%/favicon.ico"/>
-    </head>
     <body className={`${jetbrainsMono.className} w-full` }>
         {children}
       </body>
