@@ -11,6 +11,8 @@ export default function Home() {
   return (
       <main className={`relative min-h-screen bg-black ${jetbrainsMono.className}`} >
         <NavBar />
+        {/* Hero Section */}
+          <Hero/>
         {/* Footer */}
         <Footer/>
       </main>
