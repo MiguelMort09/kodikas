@@ -1,28 +1,49 @@
 'use client'
 
-import { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
-import { Menu, X } from 'lucide-react'
 import Image from "next/image";
 import KodikasLogo from "../../../public/Kodikas_LOGO_CLARO.png";
+import { Menu, X } from 'lucide-react'
+
+const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const section = document.querySelector(href);
+    if (section) {
+        section.scrollIntoView({ behavior: 'smooth' });
+    }
+}
 
 const navItems = [
-    { name: 'Inicio', href: '#' },
+    { name: 'Inicio', href: '#hero' },
     { name: 'Servicios', href: '#servicios' },
-    { name: 'Nuestros Porductos', href: '#productos' },
-    { name: 'Sobre Nosotros', href: '#nosotros' },
+    { name: 'Productos', href: '#productos' },
+    { name: 'Nosotros', href: '#nosotros' },
     { name: 'Contacto', href: '#contacto' },
 ]
 
 export function NavBar() {
     const [isOpen, setIsOpen] = useState(false)
 
+    useEffect(() => {
+        if (window.location.hash) {
+            const section = document.querySelector(window.location.hash);
+            if (section) {
+                section.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    }, []);
+
     return (
-        <nav className="sticky top-0 z-50">
+        <nav className="fixed top-0 z-50 w-full">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="flex items-center justify-between h-16">
                     <div className="flex items-center">
-                        <Link href="/" className="text-white font-bold text-xl">
+                        <Link
+                            key={'#hero'}
+                            href={'#hero'}
+                            onClick={(e) => scrollToSection(e, '#hero')}
+                        >
                             <Image
                                 src={KodikasLogo}
                                 alt="KODIKAS Logo"
@@ -37,6 +58,7 @@ export function NavBar() {
                                     key={item.name}
                                     href={item.href}
                                     className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                                    onClick={(e) => scrollToSection(e, item.href)}
                                 >
                                     {item.name}
                                 </Link>
@@ -67,7 +89,10 @@ export function NavBar() {
                                 key={item.name}
                                 href={item.href}
                                 className="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-md text-base font-medium"
-                                onClick={() => setIsOpen(false)}
+                                onClick={(e) => {
+                                    setIsOpen(false);
+                                    scrollToSection(e, item.href);
+                                }}
                             >
                                 {item.name}
                             </Link>
