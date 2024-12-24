@@ -19,7 +19,6 @@ const navItems = [
     { name: 'Servicios', href: '#servicios' },
     { name: 'Productos', href: '#productos' },
     { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Contacto', href: '#contacto' },
 ]
 
 export function NavBar() {
