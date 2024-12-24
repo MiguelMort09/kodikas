@@ -1,4 +1,4 @@
-import { jetbrainsMono } from './fonts'
+'use client'
 import { NavBar } from './components/NavBar'
 import {Hero} from "@/app/components/Hero";
 import {Services} from "@/app/components/Services";
@@ -9,20 +9,17 @@ import {Products} from "@/app/components/Products";
 
 export default function Home() {
   return (
-      <main className={`relative min-h-screen bg-black ${jetbrainsMono.className}`} >
-        <NavBar />
-        {/* Hero Section */}
-          <Hero/>
-        {/* Services Section */}
-        <Services/>
-      <Products/>
-        {/* About Us Section */}
-        <AboutUs/>
-        {/* Contact Section */}
-        <ContacSection/>
-        {/* Footer */}
-        <Footer/>
-      </main>
+      <div className="min-h-screen relative bg-black">
+          <NavBar />
+          <main>
+              <Hero/>
+              <Services/>
+              <Products/>
+              <AboutUs/>
+              <ContacSection/>
+              <Footer/>
+          </main>
+      </div>
   )
 }
 
