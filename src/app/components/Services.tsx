@@ -1,9 +1,8 @@
 import { Card, CardBody } from "@nextui-org/card";
-import { Button } from "@nextui-org/button";
 import {Cog, Globe, Server, Shield, Store, Wrench} from "lucide-react";
 
 export const Services = () => (
-    <section id="servicios" className="py-24 bg-zinc-900">
+    <section id="servicios" className="lg:min-h-screen content-center py-24 bg-zinc-900">
         <div className="container mx-auto px-4">
             <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
                 Nuestros Servicios
@@ -43,11 +42,11 @@ export const Services = () => (
                 ].map((service, index) => (
                     <Card key={index} className="bg-black border-zinc-800">
                         <CardBody className="p-6">
-                            <div className="mb-6 text-white">
+                            <div className="flex gap-4 items-center mb-6 text-white">
                                 {service.icon}
+                                <h3 className="text-xl font-bold text-white">{service.title}</h3>
                             </div>
-                            <h3 className="text-xl font-bold text-white mb-4">{service.title}</h3>
-                            <p className="text-gray-400 mb-6">{service.description}</p>
+                            <p className="text-justify text-gray-400 mb-6">{service.description}</p>
                         </CardBody>
                     </Card>
                 ))}
