@@ -26,7 +26,7 @@ export default async function OpengraphImage() {
                 <img
                     src={logoSrc}
                     alt="KODIKAS"
-                    className="w-2/3 h-auto object-cover "
+                    className="w-1/2 h-auto object-cover "
                 />
             </div>
         ),
