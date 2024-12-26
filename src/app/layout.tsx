@@ -20,7 +20,6 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="es">
-      <meta property="og:site_name" content="Link preview site name"/>
       <meta property="og:image:type" content="image/png"/>
 
       <body className={`${jetbrainsMono.className} w-full`}>
