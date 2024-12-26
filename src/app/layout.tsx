@@ -14,10 +14,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-    <body className={`${jetbrainsMono.className} w-full` }>
-        {children}
+      <html lang="es">
+      <meta property="og:image:type" content="image/png"/>
+
+
+      <body className={`${jetbrainsMono.className} w-full`}>
+      {children}
       </body>
-    </html>
+      </html>
   );
 }
