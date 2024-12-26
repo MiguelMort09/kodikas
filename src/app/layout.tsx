@@ -20,10 +20,14 @@ export default function RootLayout({
 }>) {
   return (
       <html lang="es">
-      <meta property="og:image:type" content="image/png"/>
+      <head>
+          <meta property="og:image:type" content="image/png"/>
+          <meta property="og:site_name" content="KODIKAS | SOLICONES DE SOFTWARE"/>
+          <meta property="og:url" content="https://kodikas.com.mx"/>
+      </head>
 
       <body className={`${jetbrainsMono.className} w-full`}>
-      {children}
+          {children}
       </body>
       </html>
   );
