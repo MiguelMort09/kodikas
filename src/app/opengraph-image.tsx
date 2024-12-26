@@ -7,7 +7,7 @@ export const config = {
 };
 
 export default async function OpengraphImage() {
-    const logoData = await readFile(join(process.cwd(), 'public', 'Kodikas_IMAGO_CLARO.png'));
+    const logoData = await readFile(join(process.cwd(), 'public', 'Kodikas_LOGO_CLARO.png'));
     const logoBase64 = logoData.toString('base64'); // Convierte la imagen a Base64
     const logoSrc = `data:image/png;base64,${logoBase64}`; // Define el formato de la imagen
 
