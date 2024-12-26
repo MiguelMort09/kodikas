@@ -7,8 +7,8 @@ const domain: URL = new URL(process.env.NEXT_PUBLIC_API_BASE_URL || "https://kod
 
 export const metadata: Metadata = {
     metadataBase: domain,
-    applicationName: "KODIKAS | SOLICONES DE SOFTWARE",
-    title: "KODIKAS",
+    applicationName: "KÓDIKAS | SOLICONES DE SOFTWARE",
+    title: "KÓDIKAS",
     description: "Desarrollo de soluciones tecnologicas",
 
 };
@@ -21,8 +21,9 @@ export default function RootLayout({
   return (
       <html lang="es">
       <head>
+          <meta property="og:image:alt" content="KODIKAS"/>
           <meta property="og:image:type" content="image/png"/>
-          <meta property="og:site_name" content="KODIKAS | SOLICONES DE SOFTWARE"/>
+          <meta property="og:site_name" content="KÓDIKAS | SOLICONES DE SOFTWARE"/>
           <meta property="og:url" content="https://kodikas.com.mx"/>
       </head>
 

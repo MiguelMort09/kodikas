@@ -1,5 +1,5 @@
 import Image from "next/image";
-import KodikasLogo from '../../../public/Kodikas_LOGO_CLARO.png';
+import KodikasLogo from '../../../public/KODIKAS.png';
 import KodikasISO from '../../../public/Kodikas_ISO_CLARO.png';
 
 

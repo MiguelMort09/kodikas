@@ -3,7 +3,7 @@
 import React, { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from "next/image";
-import KodikasLogo from "../../../public/Kodikas_LOGO_CLARO.png";
+import KodikasLogo from "../../../public/KODIKAS.png";
 import { Menu, X } from 'lucide-react'
 
 const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
