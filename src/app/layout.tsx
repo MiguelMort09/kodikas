@@ -3,14 +3,9 @@ import { jetbrainsMono } from './fonts'
 import "./globals.css";
 import React from "react";
 
-const domain: URL = new URL(process.env.NEXT_PUBLIC_API_BASE_URL || "https://kodikas.com.mx");
-
 export const metadata: Metadata = {
-    metadataBase: domain,
-    applicationName: "KÓDIKAS | SOLICONES DE SOFTWARE",
     title: "KÓDIKAS",
-    description: "Desarrollo de soluciones tecnologicas",
-
+    description: "Desarrollo de soluciones tecnologicas"
 };
 
 export default function RootLayout({
@@ -24,7 +19,7 @@ export default function RootLayout({
           <meta property="og:image:alt" content="KODIKAS"/>
           <meta property="og:image:type" content="image/png"/>
           <meta property="og:site_name" content="KÓDIKAS | SOLICONES DE SOFTWARE"/>
-          <meta property="og:url" content="https://kodikas.com.mx"/>
+          <meta property="og:url" content="https://www.kodikas.com.mx/"/>
       </head>
 
       <body className={`${jetbrainsMono.className} w-full`}>
