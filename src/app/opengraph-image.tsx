@@ -20,7 +20,7 @@ export default async function OpengraphImage() {
                     justifyContent: 'center',
                     width: '100%',
                     height: '100%',
-                    backgroundColor: '#fff', // Fondo blanco
+                    backgroundColor: '#000000',
                 }}
             >
                 <img
@@ -32,7 +32,7 @@ export default async function OpengraphImage() {
                     }}
                 />
             </div>
-        ),
+        ) as React.ReactElement<unknown, string | React.JSXElementConstructor<any>>,
         {
             width: 1200, // Ancho de la imagen OG
             height: 630, // Alto de la imagen OG
