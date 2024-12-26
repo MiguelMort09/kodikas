@@ -17,7 +17,6 @@ export default function RootLayout({
       <html lang="es">
       <meta property="og:image:type" content="image/png"/>
 
-
       <body className={`${jetbrainsMono.className} w-full`}>
       {children}
       </body>
