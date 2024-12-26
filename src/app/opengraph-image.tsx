@@ -26,10 +26,7 @@ export default async function OpengraphImage() {
                 <img
                     src={logoSrc}
                     alt="KODIKAS"
-                    style={{
-                        width: '200px',
-                        height: '200px', // Ajusta el tamaño de la imagen según sea necesario
-                    }}
+                    className="w-full h-auto object-cover "
                 />
             </div>
         ),
