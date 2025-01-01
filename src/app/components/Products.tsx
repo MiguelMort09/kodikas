@@ -7,6 +7,7 @@ import KOVAYAPackage from '../../../public/ProductPackage.png';
 interface KovayaProduct {
     name: string;
     description: string;
+    version: string;
     href: string;
 }
 
@@ -15,13 +16,15 @@ const kovayaProducts: KovayaProduct[] = [
         name: "KOVAYA GYM",
         description:
             "KOVAYA GYM es una solución integral diseñada específicamente para la administración eficiente de gimnasios. Facilita la gestión de clientes, pagos y reportes, todo desde un solo lugar.",
-        href: "/productos/kovaya-gym"
+        version: "none",
+        href: ""
     },
     {
         name: "KOVAYA SHOP",
         description:
             "KOVAYA SHOP es un sistema completo de punto de venta ideal para tiendas de cualquier tamaño, con funciones de gestión de inventarios, ventas y clientes.",
-        href: "/productos/kovaya-shop"
+        version: "beta",
+        href: "https://kovaya.kodikas.com.mx"
     }
 ];
 
@@ -62,15 +65,31 @@ export function Products() {
                                     <p className="text-gray-400">{product.description}</p>
                                 </CardBody>
                                 <CardFooter>
-                                    <Button
-                                        className="w-full flex justify-between items-center disable cursor-not-allowed">
-                                        PROXIMAMENTE <ArrowRight className="ml-2 h-4 w-4"/>
-                                    </Button>
+                                    <a
+                                        className="w-full"
+                                        href={['beta', 'prod'].includes(product.version) ? product.href : '#'}
+                                    >
+                                        <Button
+                                            className={`w-full flex justify-between items-center ${
+                                                product.version === 'none' ? 'cursor-not-allowed opacity-50' : ''
+                                            }`}
+                                            disabled={product.version === 'none'} // Deshabilitar el botón
+                                            onClick={(e) => {
+                                                if (product.version === 'none') {
+                                                    e.preventDefault(); // Evitar cualquier acción
+                                                }
+                                            }}
+                                        >
+                                            {product.version === 'none' && 'Proximamente'}
+                                            {product.version === 'beta' && 'Beta Preliminar'}
+                                            <ArrowRight className="ml-2 h-4 w-4"/>
+                                        </Button>
+                                    </a>
                                 </CardFooter>
                             </Card>
                         ))}
                     </div>
                 </div>
-            </section>
-            )
-            }
+        </section>
+    )
+}
